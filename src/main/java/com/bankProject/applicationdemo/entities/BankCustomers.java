@@ -1,7 +1,13 @@
 package com.bankProject.applicationdemo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+
+
+import org.hibernate.annotations.Type;
 
 @Entity(name = "customers")
 public class BankCustomers {
@@ -14,6 +20,18 @@ public class BankCustomers {
 	private String email;
 	private String dob;
 	
+	@Lob
+	@Type(type="org.hiberbate.type.BinaryType")
+	private byte[] panCopy;
+	
+	@Lob
+	@Type(type="org.hiberbate.type.BinaryType")
+	private byte[] aadharCopy;
+	
+
+	private List<BankAccount> accounts;
+	
+
 	public BankCustomers(long customerId, long pan, long aadhar, String name, String postalAddress, String email, String dob) {
 		this.customerId = customerId;
 		this.pan = pan;
@@ -22,6 +40,14 @@ public class BankCustomers {
 		this.postalAddress = postalAddress;
 		this.email = email;
 		this.dob = dob;
+	}
+
+	public List<BankAccount> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<BankAccount> accounts) {
+		this.accounts = accounts;
 	}
 
 	public long getCustomerId() {
