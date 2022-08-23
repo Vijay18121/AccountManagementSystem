@@ -1,0 +1,31 @@
+create table Customer_details
+(
+	customer_id integer primary key,
+    pancard varchar(10),
+    aadhar varchar(20),
+    name varchar(30),
+    dob date,
+    email varchar(20),
+    password varchar(20),
+    place varchar(20),
+    pincode varchar(10)
+);
+
+create table account_details
+(
+    account_number varchar(20) PRIMARY KEY,
+    customer_id varchar(20),
+    current_balance integer
+);
+
+create table account_transactions
+(
+    transaction_id integer PRIMARY KEY,
+    transaction_num integer,
+    transaction_from varchar(30),
+    transaction_to varchar(30),
+    transaction_datetime datetime,
+    transaction_type varchar(20),
+    transaction_subtype varchar(10),
+    current_balance integer
+);
