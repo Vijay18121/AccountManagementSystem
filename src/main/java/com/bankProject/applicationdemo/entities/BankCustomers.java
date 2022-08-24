@@ -46,15 +46,24 @@ public class BankCustomers {
 	}
 
 	
-	public String getRole() {
+	public String getRoleName() {
 		return role.getName();
 	}
 
+	
 
-	public void setRole(Role role) {
-		this.role.setName(name);;
+	public void setRoleName(String name) {
+		this.role.setName(name);
 	}
 
+	
+	public int getRoleId() {
+		return role.getRoleId();
+	}
+
+	public void setRoleId(int id) {
+		this.role.setRoleId(id);
+	}
 
 	public List<BankAccount> getAccounts() {
 		return accounts;
