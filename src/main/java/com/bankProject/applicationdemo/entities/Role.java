@@ -1,13 +1,13 @@
 package com.bankProject.applicationdemo.entities;
 
 public class Role {
-	private long roleId;
+	private int roleId;
 	private String Name;
 	
-	public long getRoleId() {
+	public int getRoleId() {
 		return roleId;
 	}
-	public void setRoleId(long roleId) {
+	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
 	public String getName() {

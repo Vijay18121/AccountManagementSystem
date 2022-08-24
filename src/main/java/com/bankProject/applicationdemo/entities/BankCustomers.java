@@ -19,6 +19,7 @@ public class BankCustomers {
 	private String postalAddress;
 	private String email;
 	private String dob;
+	private Role role;
 	
 	@Lob
 	@Type(type="org.hiberbate.type.BinaryType")
@@ -32,7 +33,7 @@ public class BankCustomers {
 	private List<BankAccount> accounts;
 	
 
-	public BankCustomers(long customerId, long pan, long aadhar, String name, String postalAddress, String email, String dob) {
+	public BankCustomers(long customerId, long pan, long aadhar, String name, String postalAddress, String email, String dob, int roleId, String role) {
 		this.customerId = customerId;
 		this.pan = pan;
 		this.aadhar = aadhar;
@@ -40,7 +41,20 @@ public class BankCustomers {
 		this.postalAddress = postalAddress;
 		this.email = email;
 		this.dob = dob;
+		this.role.setRoleId(roleId);
+		this.role.setName(role);
 	}
+
+	
+	public String getRole() {
+		return role.getName();
+	}
+
+
+	public void setRole(Role role) {
+		this.role.setName(name);;
+	}
+
 
 	public List<BankAccount> getAccounts() {
 		return accounts;
@@ -49,7 +63,7 @@ public class BankCustomers {
 	public void setAccounts(List<BankAccount> accounts) {
 		this.accounts = accounts;
 	}
-
+	
 	public long getCustomerId() {
 		return customerId;
 	}
